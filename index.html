@@ -11,14 +11,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
+            --primary-color: #8B0000;
+            --secondary-color: #B22222;
             --success-color: #27ae60;
             --warning-color: #f39c12;
             --danger-color: #e74c3c;
             --gold-color: #ffd700;
             --light-bg: #f8f9fa;
             --border-color: #dee2e6;
+            --red-light: #ffeaea;
+            --red-medium: #ffcccc;
+            --red-dark: #cc0000;
         }
         
         * {
@@ -237,25 +240,25 @@
         .axis-box.top-left {
             top: 15%;
             right: 10%;
-            border-color: #3498db;
+            border-color: #B22222;
         }
         
         .axis-box.top-right {
             top: 15%;
             left: 10%;
-            border-color: #2ecc71;
+            border-color: #8B0000;
         }
         
         .axis-box.bottom-left {
             bottom: 15%;
             right: 10%;
-            border-color: #e74c3c;
+            border-color: #A52A2A;
         }
         
         .axis-box.bottom-right {
             bottom: 15%;
             left: 10%;
-            border-color: #f39c12;
+            border-color: #DC143C;
         }
         
         .axis-title {
@@ -311,7 +314,7 @@
             100% { transform: translateY(0px); }
         }
         
-        .stat-card.red { background-color: #ffeaea; border-top: 5px solid var(--danger-color); }
+        .stat-card.red { background-color: var(--red-light); border-top: 5px solid var(--danger-color); }
         .stat-card.yellow { background-color: #fff9e6; border-top: 5px solid var(--warning-color); }
         .stat-card.green { background-color: #e8f7ef; border-top: 5px solid var(--success-color); }
         .stat-card.gold { background-color: #fffce6; border-top: 5px solid var(--gold-color); }
@@ -392,6 +395,8 @@
         .criteria-name {
             width: 30%;
             text-align: right;
+            font-size: 14px;
+            font-weight: bold;
         }
         
         .max-score {
@@ -501,7 +506,7 @@
         .percentage-cell {
             font-weight: bold;
             border-radius: 4px;
-            color: black !important; /* ضمان أن النص أسود دائماً */
+            color: black !important;
         }
         
         .final-evaluation-circle {
@@ -543,7 +548,7 @@
         }
         
         .btn-primary:hover {
-            background-color: #2980b9;
+            background-color: #8B0000;
         }
         
         .btn-success {
@@ -654,6 +659,10 @@
             .criteria-table th,
             .criteria-table td {
                 padding: 6px;
+            }
+            
+            .criteria-name {
+                font-size: 13px;
             }
             
             .score-btn {
@@ -968,9 +977,9 @@
     <!-- قالب PDF مخفي -->
     <div id="pdf-template" style="position: absolute; left: -10000px; top: -10000px; width: 794px; height: 1123px; background: white; padding: 20px; box-sizing: border-box; font-family: 'Times New Roman', serif; font-size: 12px; direction: rtl;">
         <div style="text-align: center; margin-bottom: 15px;">
-            <img src="https://i.postimg.cc/NM2zJWZD/NAIF-LOGO.jpg" alt="شعار الشركة" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #4a90e2; margin-bottom: 10px;">
-            <h2 style="color: #4a90e2; margin: 0; font-size: 24px; font-weight: bold;">شركة نايف للأغذية</h2>
-            <h3 style="color: #4a90e2; margin: 10px 0 15px 0; font-size: 20px; font-weight: bold;">نموذج تقييم المطعم</h3>
+            <img src="https://i.postimg.cc/NM2zJWZD/NAIF-LOGO.jpg" alt="شعار الشركة" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #8B0000; margin-bottom: 10px;">
+            <h2 style="color: #8B0000; margin: 0; font-size: 24px; font-weight: bold;">شركة نايف للأغذية</h2>
+            <h3 style="color: #8B0000; margin: 10px 0 15px 0; font-size: 20px; font-weight: bold;">نموذج تقييم المطعم</h3>
             <div style="margin-bottom: 10px; font-size: 16px; font-weight: bold;">
                 <div>المطعم: <span id="pdf-restaurant" style="font-weight: bold;"></span></div>
                 <div>تاريخ التقييم: <span id="pdf-date"></span></div>
@@ -981,32 +990,32 @@
         
         <!-- مخطط العناصر الأساسية للتميز في PDF -->
         <div style="margin: 15px 0; text-align: center; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
-            <h4 style="color: #4a90e2; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">العناصر الأساسية للتميز</h4>
+            <h4 style="color: #8B0000; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">العناصر الأساسية للتميز</h4>
             <div id="pdf-diagram" style="position: relative; width: 100%; height: 200px; margin: 0 auto;">
                 <!-- سيتم إضافة المخطط هنا -->
             </div>
         </div>
         
         <div style="margin-bottom: 15px; padding: 10px; background: #f8f9fa; border-radius: 4px; font-size: 13px;">
-            <h4 style="color: #4a90e2; margin: 0 0 8px 0; text-align: center; font-size: 16px;">ملخص النتائج</h4>
+            <h4 style="color: #8B0000; margin: 0 0 8px 0; text-align: center; font-size: 16px;">ملخص النتائج</h4>
             <div id="pdf-summary" style="text-align: center;"></div>
         </div>
         
         <table style="font-size: 10px; border-collapse: collapse; width: 100%; margin-bottom: 15px;">
             <thead>
                 <tr>
-                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #4a90e2; color: white;">المحور</th>
-                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #4a90e2; color: white;">الدرجة القصوى</th>
-                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #4a90e2; color: white;">الدرجة المحققة</th>
-                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #4a90e2; color: white;">النسبة %</th>
+                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">المحور</th>
+                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">الدرجة القصوى</th>
+                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">الدرجة المحققة</th>
+                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">النسبة %</th>
                 </tr>
             </thead>
             <tbody id="pdf-results-body">
             </tbody>
         </table>
         
-        <div style="margin-top: 15px; padding: 10px; border-top: 2px solid #4a90e2; font-size: 13px;">
-            <h4 style="color: #4a90e2; margin: 0 0 8px 0; text-align: center; font-size: 16px;">التقييم النهائي</h4>
+        <div style="margin-top: 15px; padding: 10px; border-top: 2px solid #8B0000; font-size: 13px;">
+            <h4 style="color: #8B0000; margin: 0 0 8px 0; text-align: center; font-size: 16px;">التقييم النهائي</h4>
             <div id="pdf-final-evaluation" style="text-align: center; font-size: 15px; font-weight: bold;"></div>
         </div>
     </div>
@@ -1161,6 +1170,16 @@
             
             document.querySelectorAll('.not-available-checkbox').forEach(checkbox => {
                 checkbox.addEventListener('change', function() {
+                    const itemId = this.getAttribute('data-id').replace('na-', 'score-');
+                    const scoreBtn = document.querySelector(`button[data-id="${itemId}"]`);
+                    const hiddenInput = document.getElementById(itemId);
+                    
+                    if (this.checked) {
+                        // إذا تم تحديد "غير متوفر"، ضع الدرجة 0
+                        scoreBtn.textContent = '0';
+                        scoreBtn.classList.remove('active');
+                        if (hiddenInput) hiddenInput.value = '0';
+                    }
                     calculateResults();
                 });
             });
@@ -1272,6 +1291,14 @@
                 // إضافة حدث النقر على زر الدرجة
                 const scoreBtn = row.querySelector('.score-btn');
                 scoreBtn.addEventListener('click', function() {
+                    const notAvailableCheckbox = row.querySelector('.not-available-checkbox');
+                    
+                    // إذا كان العنصر غير متوفر، لا يمكن تغيير الدرجة
+                    if (notAvailableCheckbox && notAvailableCheckbox.checked) {
+                        alert('لا يمكن تعديل درجة عنصر غير متوفر. يرجى إلغاء تحديد "غير متوفر" أولاً.');
+                        return;
+                    }
+                    
                     const currentScore = parseInt(this.textContent) || 0;
                     const maxScore = parseInt(this.getAttribute('data-max'));
                     const newScore = currentScore === maxScore ? 0 : maxScore;
@@ -1306,7 +1333,6 @@
             
             categories.forEach(category => {
                 let achieved = 0;
-                let max = category.maxTotal;
                 let availableMax = 0; // للعناصر المتوفرة فقط
                 
                 evaluationData[category.id].forEach(item => {
@@ -1337,6 +1363,7 @@
                 
                 const percentage = adjustedMax > 0 ? Math.round((achieved / adjustedMax) * 100) : 0;
                 results.push({
+                    id: category.id,
                     name: category.name,
                     maxScore: adjustedMax,
                     achievedScore: achieved,
@@ -1579,28 +1606,28 @@
                 const pdfDiagram = document.getElementById('pdf-diagram');
                 pdfDiagram.innerHTML = `
                     <div style="position: relative; width: 300px; height: 150px; margin: 0 auto;">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: linear-gradient(135deg, #3498db, #2c3e50); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 12px; text-align: center; border: 3px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: linear-gradient(135deg, #B22222, #8B0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 12px; text-align: center; border: 3px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
                             الهدف:<br>الجودة
                         </div>
-                        <div style="position: absolute; top: 20px; right: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #3498db; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
+                        <div style="position: absolute; top: 20px; right: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #B22222; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
                             <div style="font-weight: bold;">خدمة العملاء</div>
                             <div style="font-size: 12px; font-weight: bold;">${document.querySelector('#service-box .axis-score').textContent}</div>
-                            <div>من 200</div>
+                            <div>من ${document.querySelector('#service-box .axis-total').textContent.replace('من ', '')}</div>
                         </div>
-                        <div style="position: absolute; top: 20px; left: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #2ecc71; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
+                        <div style="position: absolute; top: 20px; left: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #8B0000; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
                             <div style="font-weight: bold;">النظافة</div>
                             <div style="font-size: 12px; font-weight: bold;">${document.querySelector('#cleanliness-box .axis-score').textContent}</div>
-                            <div>من 300</div>
+                            <div>من ${document.querySelector('#cleanliness-box .axis-total').textContent.replace('من ', '')}</div>
                         </div>
-                        <div style="position: absolute; bottom: 20px; right: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #e74c3c; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
+                        <div style="position: absolute; bottom: 20px; right: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #A52A2A; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
                             <div style="font-weight: bold;">التجهيزات</div>
                             <div style="font-size: 12px; font-weight: bold;">${document.querySelector('#equipment-box .axis-score').textContent}</div>
-                            <div>من 250</div>
+                            <div>من ${document.querySelector('#equipment-box .axis-total').textContent.replace('من ', '')}</div>
                         </div>
-                        <div style="position: absolute; bottom: 20px; left: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #f39c12; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
+                        <div style="position: absolute; bottom: 20px; left: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #DC143C; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
                             <div style="font-weight: bold;">الإدارة</div>
                             <div style="font-size: 12px; font-weight: bold;">${document.querySelector('#management-box .axis-score').textContent}</div>
-                            <div>من 250</div>
+                            <div>من ${document.querySelector('#management-box .axis-total').textContent.replace('من ', '')}</div>
                         </div>
                     </div>
                 `;
@@ -1614,6 +1641,8 @@
                 
                 // حساب الدرجات المحققة لكل محور
                 let totalAchievedForPDF = 0;
+                let totalMaxForPDF = 0;
+                
                 categories.forEach((category, index) => {
                     let achieved = 0;
                     let availableMax = 0;
@@ -1631,6 +1660,7 @@
                     });
                     
                     totalAchievedForPDF += achieved;
+                    totalMaxForPDF += availableMax;
                     const percentage = availableMax > 0 ? Math.round((achieved / availableMax) * 100) : 0;
                     
                     const row = document.createElement('tr');
@@ -1647,17 +1677,7 @@
                 const totalRow = document.createElement('tr');
                 totalRow.innerHTML = `
                     <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">الإجمالي</td>
-                    <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">${totalAchievedForPDF === 0 ? 1250 : (categories.reduce((sum, cat, idx) => {
-                        let availableMax = 0;
-                        const categoryData = evaluationData[Object.keys(evaluationData)[idx]];
-                        categoryData.forEach(item => {
-                            const notAvailableCheckbox = document.querySelector(`input[data-id="na-${item.id}"]`);
-                            if (!(notAvailableCheckbox && notAvailableCheckbox.checked)) {
-                                availableMax += item.maxScore;
-                            }
-                        });
-                        return sum + availableMax;
-                    }, 0))}</td>
+                    <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">${totalMaxForPDF}</td>
                     <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">${totalAchievedForPDF}</td>
                     <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold; background-color: ${getPercentageColor(totalPercentage)}; color: black;">${totalPercentage}%</td>
                 `;
