@@ -501,6 +501,7 @@
         .percentage-cell {
             font-weight: bold;
             border-radius: 4px;
+            color: black !important; /* ضمان أن النص أسود دائماً */
         }
         
         .final-evaluation-circle {
@@ -1423,7 +1424,7 @@
                     <td>${result.name}</td>
                     <td>${result.maxScore}</td>
                     <td>${result.achievedScore}</td>
-                    <td class="percentage-cell" style="background-color: ${getPercentageColor(result.percentage)}; color: ${result.percentage >= 70 ? 'white' : 'black'}">${result.percentage}%</td>
+                    <td class="percentage-cell" style="background-color: ${getPercentageColor(result.percentage)};">${result.percentage}%</td>
                     <td>
                         <div class="final-evaluation-circle" style="background-color: ${circleColor}; width: 40px; height: 40px; font-size: 14px;">
                             ${result.percentage}%
@@ -1443,7 +1444,7 @@
                 <td><strong>الإجمالي (1-5)</strong></td>
                 <td><strong>${totalMax}</strong></td>
                 <td><strong>${totalAchieved}</strong></td>
-                <td class="percentage-cell" style="background-color: ${totalColor}; color: ${totalPercentage >= 70 ? 'white' : 'black'}"><strong>${totalPercentage}%</strong></td>
+                <td class="percentage-cell" style="background-color: ${totalColor};"><strong>${totalPercentage}%</strong></td>
                 <td>
                     <div class="final-evaluation-circle" style="background-color: ${totalCircleColor}; width: 50px; height: 50px; font-size: 16px;">
                         ${totalPercentage}%
@@ -1637,7 +1638,7 @@
                         <td style="padding: 6px; border: 1px solid #000; text-align: center;">${category}</td>
                         <td style="padding: 6px; border: 1px solid #000; text-align: center;">${availableMax}</td>
                         <td style="padding: 6px; border: 1px solid #000; text-align: center;">${achieved}</td>
-                        <td style="padding: 6px; border: 1px solid #000; text-align: center; background-color: ${getPercentageColor(percentage)};">${percentage}%</td>
+                        <td style="padding: 6px; border: 1px solid #000; text-align: center; background-color: ${getPercentageColor(percentage)}; color: black;">${percentage}%</td>
                     `;
                     pdfResultsBody.appendChild(row);
                 });
@@ -1658,7 +1659,7 @@
                         return sum + availableMax;
                     }, 0))}</td>
                     <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">${totalAchievedForPDF}</td>
-                    <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold; background-color: ${getPercentageColor(totalPercentage)};">${totalPercentage}%</td>
+                    <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold; background-color: ${getPercentageColor(totalPercentage)}; color: black;">${totalPercentage}%</td>
                 `;
                 pdfResultsBody.appendChild(totalRow);
                 
