@@ -568,6 +568,87 @@
         .btn-warning:hover {
             background-color: #e67e22;
         }
+
+        /* توقيع المطور */
+        .signature-card {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #FF6E00, #2196F3);
+            color: white;
+            padding: 10.5px 17.5px;
+            border-radius: 8.5px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 1000;
+            animation: float 6s ease-in-out infinite;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .signature-card:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4); 
+        }
+
+        @keyframes float { 
+            0% { transform: translateY(0px); } 
+            50% { transform: translateY(-15px); } 
+            100% { transform: translateY(0px); } 
+        }
+
+        .signature-card::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(135deg, #80EF80, #2196F3);
+            border-radius: 14px;
+            z-index: -1;
+            animation: borderGlow 3s linear infinite;
+            background-size: 400%;
+        }
+
+        @keyframes borderGlow { 
+            0% { background-position: 0% 50%; } 
+            50% { background-position: 100% 50%; } 
+            100% { background-position: 0% 50%; } 
+        }
+
+        .signature-card .name { 
+            font-size: 0.95rem; 
+            font-weight: 700; 
+            margin-bottom: 5px; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3); 
+        }
+
+        .signature-card .title { 
+            font-size: 0.7rem; 
+            opacity: 0.9; 
+            font-weight: 500; 
+        }
+
+        @media (max-width: 768px) { 
+            .signature-card { 
+                position: relative; 
+                bottom: auto; 
+                left: auto; 
+                margin: 20px auto 0; 
+                width: fit-content; 
+                animation: none; 
+            } 
+            .signature-card:hover { 
+                transform: none; 
+            } 
+        }
+
+        @media print {
+            .signature-card {
+                display: none;
+            }
+        }
         
         /* تصميم الطباعة */
         @media print {
@@ -729,7 +810,7 @@
                 <img src="https://i.postimg.cc/NM2zJWZD/NAIF-LOGO.jpg" alt="شعار شركة نايف للأغذية" class="logo">
             </div>
             <h1>نموذج تقييم المطعم</h1>
-            <p>شركة نايف للأغذية | نظام التقييم الشامل (1250 درجة)</p>
+            <p>شركة نايف للأغذية | نظام التقييم الشامل (1250 درجة كحد أقصى)</p>
         </div>
     </div>
 
@@ -820,7 +901,7 @@
 
         <!-- نموذج التقييم -->
         <div class="evaluation-form">
-            <h2 style="text-align: center; margin-bottom: 15px; color: var(--primary-color); font-size: 20px;">نموذج تقييم المطعم (1250 درجة)</h2>
+            <h2 style="text-align: center; margin-bottom: 15px; color: var(--primary-color); font-size: 20px;">نموذج تقييم المطعم (1250 درجة كحد أقصى)</h2>
             
             <!-- محور 1: خدمة العملاء -->
             <div class="section-title">
@@ -936,6 +1017,7 @@
         <!-- نتائج التقييم -->
         <div class="results-summary">
             <h2 class="results-title">ملخص نتائج التقييم</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 10px; font-size: 14px;">(المجموع الكلي يعتمد على العناصر المتاحة فقط)</p>
             
             <table class="results-table">
                 <thead>
@@ -954,7 +1036,7 @@
             
             <div style="margin-top: 25px; text-align: center;">
                 <h3 id="final-evaluation" style="padding: 15px; border-radius: 5px; background-color: #f8f9fa; font-size: 18px;">
-                    إجمالي الدرجات: <span id="total-score-result">0</span> من 1250 درجة
+                    إجمالي الدرجات: <span id="total-score-result">0</span> من <span id="total-max-result">1250</span> درجة
                 </h3>
                 <div style="margin-top: 15px; font-size: 17px;">
                     <strong>التقييم النهائي:</strong> <span id="evaluation-text">لم يتم التقييم بعد</span>
@@ -972,6 +1054,12 @@
             <button class="btn btn-warning" onclick="printEvaluation()">طباعة التقرير</button>
             <button class="btn btn-primary" onclick="resetForm()">إعادة تعيين</button>
         </div>
+    </div>
+
+    <!-- توقيع المطور -->
+    <div class="signature-card">
+        <div class="name">Yasser Elkhateeb</div>
+        <div class="title">مطور البرنامج 67011143</div>
     </div>
 
     <!-- قالب PDF مخفي -->
@@ -1017,6 +1105,10 @@
         <div style="margin-top: 15px; padding: 10px; border-top: 2px solid #8B0000; font-size: 13px;">
             <h4 style="color: #8B0000; margin: 0 0 8px 0; text-align: center; font-size: 16px;">التقييم النهائي</h4>
             <div id="pdf-final-evaluation" style="text-align: center; font-size: 15px; font-weight: bold;"></div>
+            <!-- إضافة الدائرة الملونة للتقييم النهائي في PDF -->
+            <div id="pdf-final-circle" style="width: 60px; height: 60px; border-radius: 50%; margin: 10px auto; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 18px; color: white;">
+                -
+            </div>
         </div>
     </div>
 
@@ -1387,7 +1479,7 @@
             updateResultsTable(results, totalAchieved, totalPercentage, totalMax);
             
             // تحديث التقييم النهائي
-            updateFinalEvaluation(totalPercentage);
+            updateFinalEvaluation(totalPercentage, totalAchieved, totalMax);
         }
 
         // تحديث المربعات في المخطط
@@ -1482,10 +1574,11 @@
             
             // تحديث نتيجة الإجمالي
             document.getElementById('total-score-result').textContent = totalAchieved;
+            document.getElementById('total-max-result').textContent = totalMax;
         }
 
         // تحديث التقييم النهائي
-        function updateFinalEvaluation(percentage) {
+        function updateFinalEvaluation(percentage, totalAchieved, totalMax) {
             const evaluationText = document.getElementById('evaluation-text');
             const finalEvaluation = document.getElementById('final-evaluation');
             const finalCircle = document.getElementById('final-circle');
@@ -1592,13 +1685,14 @@
                 
                 document.getElementById('pdf-evaluator').textContent = document.getElementById('evaluator-name').value || 'غير محدد';
                 
-                // إعداد ملخص النتائج
+                // حساب النتائج الإجمالية
                 const totalAchieved = parseInt(document.getElementById('total-score').textContent);
                 const totalPercentage = parseInt(document.getElementById('total-percentage').textContent);
+                const totalMax = parseInt(document.getElementById('total-max-result').textContent);
                 const evaluationText = document.getElementById('evaluation-text').textContent;
                 
                 document.getElementById('pdf-summary').innerHTML = `
-                    <div>إجمالي الدرجات: <strong>${totalAchieved}</strong> من 1250 درجة</div>
+                    <div>إجمالي الدرجات: <strong>${totalAchieved}</strong> من <strong>${totalMax}</strong> درجة</div>
                     <div>النسبة المئوية: <strong>${totalPercentage}%</strong></div>
                 `;
                 
@@ -1637,7 +1731,6 @@
                 pdfResultsBody.innerHTML = '';
                 
                 const categories = ['خدمة العملاء', 'النظافة', 'المعدات والتجهيزات', 'إدارة المطعم', 'الجودة'];
-                const maxScores = [200, 300, 250, 250, 250];
                 
                 // حساب الدرجات المحققة لكل محور
                 let totalAchievedForPDF = 0;
@@ -1683,8 +1776,17 @@
                 `;
                 pdfResultsBody.appendChild(totalRow);
                 
-                // إضافة التقييم النهائي
-                document.getElementById('pdf-final-evaluation').textContent = evaluationText;
+                // إضافة التقييم النهائي مع الدائرة الملونة
+                const finalCircleColor = getPercentageColorForCircle(totalPercentage);
+                document.getElementById('pdf-final-evaluation').innerHTML = `
+                    <div>${evaluationText}</div>
+                `;
+                
+                // تحديث الدائرة الملونة في PDF
+                const pdfFinalCircle = document.getElementById('pdf-final-circle');
+                pdfFinalCircle.style.backgroundColor = finalCircleColor;
+                pdfFinalCircle.textContent = totalPercentage + '%';
+                pdfFinalCircle.style.color = 'white';
                 
                 // إعداد العنصر للتصوير
                 const element = document.getElementById('pdf-template');
