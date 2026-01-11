@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نموذج تقييم المطعم - شركة نايف للأغذية</title>
-    <!-- إضافة أيقونة شعار الشركة -->
+    <title>نموذج تقييم المطعم - شركة نايف للأغذية Restaurant Evaluation Form - Naif Food Company</title>
+    <!-- إضافة أيقونة شعار الشركة Add company logo icon -->
     <link rel="icon" href="https://i.postimg.cc/NM2zJWZD/NAIF-LOGO.jpg" type="image/jpeg">
-    <!-- مكتبات JavaScript لإنشاء PDF -->
+    <!-- مكتبات JavaScript لإنشاء PDF JavaScript libraries for PDF creation -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
@@ -45,7 +45,7 @@
             padding: 0 15px;
         }
         
-        /* رأس الصفحة */
+        /* رأس الصفحة Page Header */
         .header {
             background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: white;
@@ -81,7 +81,7 @@
             opacity: 0.9;
         }
         
-        /* اختيار المطعم */
+        /* اختيار المطعم Restaurant Selection */
         .restaurant-selector {
             background-color: white;
             border-radius: 8px;
@@ -165,7 +165,7 @@
             margin-top: 8px;
         }
         
-        /* مخطط الدائرة المركزية */
+        /* مخطط الدائرة المركزية Central Diagram */
         .diagram-section {
             background-color: white;
             border-radius: 8px;
@@ -195,8 +195,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 180px;
-            height: 180px;
+            width: 90px; /* تغيير من 180px إلى 90px (نصف الحجم) Changed from 180px to 90px (half size) */
+            height: 90px; /* تغيير من 180px إلى 90px (نصف الحجم) Changed from 180px to 90px (half size) */
             background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
             border-radius: 50%;
             display: flex;
@@ -210,9 +210,9 @@
         .center-text {
             color: white;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 12px; /* تقليل حجم الخط بسبب تصغير الدائرة Reduced font size due to smaller circle */
             text-align: center;
-            padding: 15px;
+            padding: 10px;
         }
         
         .axis-box {
@@ -274,11 +274,15 @@
         }
         
         .axis-total {
-            font-size: 14px;
+            font-size: 18px; /* زيادة بنسبة 50% من 14px إلى 21px (تم تقريبها إلى 18px لأسباب تصميمية) 50% increase from 14px to 21px (rounded to 18px for design reasons) */
             color: #666;
         }
         
-        /* الكروت الإحصائية المتحركة */
+        .axis-number {
+            font-weight: bold; /* جعل الرقم غامقًا Make the number bold */
+        }
+        
+        /* الكروت الإحصائية المتحركة Animated Statistics Cards */
         .stats-container {
             display: flex;
             justify-content: space-between;
@@ -330,7 +334,7 @@
             color: #666;
         }
         
-        /* نموذج التقييم */
+        /* نموذج التقييم Evaluation Form */
         .evaluation-form {
             background-color: white;
             border-radius: 8px;
@@ -459,7 +463,7 @@
             font-size: 13px;
         }
         
-        /* نتائج التقييم */
+        /* نتائج التقييم Evaluation Results */
         .results-summary {
             background-color: white;
             border-radius: 8px;
@@ -523,7 +527,7 @@
             color: white;
         }
         
-        /* أزرار التحكم */
+        /* أزرار التحكم Control Buttons */
         .control-buttons {
             display: flex;
             justify-content: center;
@@ -569,7 +573,7 @@
             background-color: #e67e22;
         }
 
-        /* توقيع المطور */
+        /* توقيع المطور Developer Signature */
         .signature-card {
             position: fixed;
             bottom: 20px;
@@ -650,7 +654,7 @@
             }
         }
         
-        /* تصميم الطباعة */
+        /* تصميم الطباعة Print Design */
         @media print {
             body {
                 font-size: 80%;
@@ -682,15 +686,15 @@
             }
         }
         
-        /* تصميم متجاوب */
+        /* تصميم متجاوب Responsive Design */
         @media (max-width: 1024px) {
             .diagram-container {
                 height: 400px;
             }
             
             .center-circle {
-                width: 150px;
-                height: 150px;
+                width: 75px; /* تعديل للحفاظ على التناسب Adjusted to maintain proportion */
+                height: 75px;
             }
             
             .axis-box {
@@ -705,12 +709,12 @@
             }
             
             .center-circle {
-                width: 130px;
-                height: 130px;
+                width: 65px; /* تعديل للحفاظ على التناسب Adjusted to maintain proportion */
+                height: 65px;
             }
             
             .center-text {
-                font-size: 16px;
+                font-size: 10px; /* تقليل حجم الخط بسبب تصغير الدائرة Reduced font size due to smaller circle */
             }
             
             .axis-box {
@@ -725,6 +729,10 @@
             
             .axis-score {
                 font-size: 20px;
+            }
+            
+            .axis-total {
+                font-size: 16px; /* تعديل لحجم الشاشات الصغيرة Adjusted for small screens */
             }
             
             .stats-container {
@@ -779,12 +787,12 @@
             }
             
             .center-circle {
-                width: 110px;
-                height: 110px;
+                width: 55px; /* تعديل للحفاظ على التناسب Adjusted to maintain proportion */
+                height: 55px;
             }
             
             .center-text {
-                font-size: 14px;
+                font-size: 8px; /* تقليل حجم الخط بسبب تصغير الدائرة Reduced font size due to smaller circle */
             }
             
             .axis-box {
@@ -799,247 +807,251 @@
             .axis-score {
                 font-size: 16px;
             }
+            
+            .axis-total {
+                font-size: 14px; /* تعديل لحجم الشاشات الصغيرة Adjusted for small screens */
+            }
         }
     </style>
 </head>
 <body>
-    <!-- رأس الصفحة -->
+    <!-- رأس الصفحة Page Header -->
     <div class="header">
         <div class="container">
             <div class="logo-container">
-                <img src="https://i.postimg.cc/NM2zJWZD/NAIF-LOGO.jpg" alt="شعار شركة نايف للأغذية" class="logo">
+                <img src="https://i.postimg.cc/NM2zJWZD/NAIF-LOGO.jpg" alt="شعار شركة نايف للأغذية Naif Food Company Logo" class="logo">
             </div>
-            <h1>نموذج تقييم المطعم</h1>
-            <p>شركة نايف للأغذية | نظام التقييم الشامل (1250 درجة كحد أقصى)</p>
+            <h1>نموذج تقييم المطعم Restaurant Evaluation Form</h1>
+            <p>شركة نايف للأغذية | نظام التقييم الشامل (1230 درجة كحد أقصى) Naif Food Company | Comprehensive Evaluation System (1230 points maximum)</p>
         </div>
     </div>
 
     <div class="container">
-        <!-- اختيار المطعم -->
+        <!-- اختيار المطعم Restaurant Selection -->
         <div class="restaurant-selector">
             <div class="restaurant-info">
-                <label for="restaurant-search"><strong>اختر المطعم:</strong></label>
+                <label for="restaurant-search"><strong>اختر المطعم: Choose Restaurant:</strong></label>
                 <div class="restaurant-search-container">
-                    <input type="text" id="restaurant-search" placeholder="ابحث عن المطعم..." autocomplete="off">
+                    <input type="text" id="restaurant-search" placeholder="ابحث عن المطعم... Search for restaurant..." autocomplete="off">
                     <div class="restaurant-dropdown" id="restaurant-dropdown"></div>
                 </div>
                 <input type="hidden" id="selected-restaurant" value="">
             </div>
             <div class="restaurant-details">
-                <p><strong>مدير المنطقة:</strong> <span id="area-manager">-</span></p>
-                <p><strong>مدير التشغيل:</strong> <span id="operation-manager">-</span></p>
+                <p><strong>مدير المنطقة: Area Manager:</strong> <span id="area-manager">-</span></p>
+                <p><strong>مدير التشغيل: Operation Manager:</strong> <span id="operation-manager">-</span></p>
             </div>
             <div class="evaluator-input">
-                <label for="evaluator-name"><strong>القائم بعملية التقييم:</strong></label>
-                <input type="text" id="evaluator-name" placeholder="اسم المقيم">
+                <label for="evaluator-name"><strong>القائم بعملية التقييم: Evaluator:</strong></label>
+                <input type="text" id="evaluator-name" placeholder="اسم المقيم Evaluator Name">
             </div>
         </div>
 
-        <!-- مخطط الدائرة المركزية -->
+        <!-- مخطط الدائرة المركزية Central Diagram -->
         <div class="diagram-section" id="excellence-diagram">
-            <h3 class="diagram-title">العناصر الأساسية للتميز</h3>
+            <h3 class="diagram-title">العناصر الأساسية للتميز Core Elements of Excellence</h3>
             <div class="diagram-container">
-                <!-- الخطوط الواصلة -->
+                <!-- الخطوط الواصلة Connecting Lines -->
                 <div class="connecting-line" id="line1"></div>
                 <div class="connecting-line" id="line2"></div>
                 <div class="connecting-line" id="line3"></div>
                 <div class="connecting-line" id="line4"></div>
                 
-                <!-- الدائرة المركزية -->
+                <!-- الدائرة المركزية Center Circle -->
                 <div class="center-circle">
                     <div class="center-text">
-                        الهدف:<br>الجودة المطلقة
+                        الهدف: Goal:<br>الجودة المطلقة Absolute Quality
                     </div>
                 </div>
                 
-                <!-- المربعات المحيطة -->
+                <!-- المربعات المحيطة Surrounding Boxes -->
                 <div class="axis-box top-left" id="service-box">
-                    <div class="axis-title">خدمة العملاء</div>
+                    <div class="axis-title">خدمة العملاء Customer Service</div>
                     <div class="axis-score">0</div>
-                    <div class="axis-total">من 200</div>
+                    <div class="axis-total">من <span class="axis-number">200</span></div>
                 </div>
                 
                 <div class="axis-box top-right" id="cleanliness-box">
-                    <div class="axis-title">النظافة</div>
+                    <div class="axis-title">النظافة Cleanliness</div>
                     <div class="axis-score">0</div>
-                    <div class="axis-total">من 300</div>
+                    <div class="axis-total">من <span class="axis-number">300</span></div>
                 </div>
                 
                 <div class="axis-box bottom-left" id="equipment-box">
-                    <div class="axis-title">تجهيزات المطعم</div>
+                    <div class="axis-title">تجهيزات المطعم Restaurant Equipment</div>
                     <div class="axis-score">0</div>
-                    <div class="axis-total">من 250</div>
+                    <div class="axis-total">من <span class="axis-number">250</span></div>
                 </div>
                 
                 <div class="axis-box bottom-right" id="management-box">
-                    <div class="axis-title">إدارة المطعم</div>
+                    <div class="axis-title">إدارة المطعم Restaurant Management</div>
                     <div class="axis-score">0</div>
-                    <div class="axis-total">من 250</div>
+                    <div class="axis-total">من <span class="axis-number">250</span></div>
                 </div>
             </div>
         </div>
 
-        <!-- الكروت الإحصائية المتحركة -->
+        <!-- الكروت الإحصائية المتحركة Animated Statistics Cards -->
         <div class="stats-container">
             <div class="stat-card floating red">
                 <div class="stat-value" id="total-score">0</div>
-                <div class="stat-label">إجمالي الدرجات المحققة</div>
+                <div class="stat-label">إجمالي الدرجات المحققة Total Achieved Points</div>
             </div>
             <div class="stat-card floating yellow">
                 <div class="stat-value" id="total-percentage">0%</div>
-                <div class="stat-label">النسبة المئوية الإجمالية</div>
+                <div class="stat-label">النسبة المئوية الإجمالية Total Percentage</div>
             </div>
             <div class="stat-card floating green">
                 <div class="stat-value" id="quality-score">250</div>
-                <div class="stat-label">درجة الجودة (متبقي)</div>
+                <div class="stat-label">درجة الجودة (متبقي) Quality Score (Remaining)</div>
             </div>
             <div class="stat-card floating gold">
                 <div class="stat-value" id="final-grade">-</div>
-                <div class="stat-label">التقييم النهائي</div>
+                <div class="stat-label">التقييم النهائي Final Evaluation</div>
             </div>
         </div>
 
-        <!-- نموذج التقييم -->
+        <!-- نموذج التقييم Evaluation Form -->
         <div class="evaluation-form">
-            <h2 style="text-align: center; margin-bottom: 15px; color: var(--primary-color); font-size: 20px;">نموذج تقييم المطعم (1250 درجة كحد أقصى)</h2>
+            <h2 style="text-align: center; margin-bottom: 15px; color: var(--primary-color); font-size: 20px;">نموذج تقييم المطعم (1230 درجة كحد أقصى) Restaurant Evaluation Form (1230 points maximum)</h2>
             
-            <!-- محور 1: خدمة العملاء -->
+            <!-- محور 1: خدمة العملاء Axis 1: Customer Service -->
             <div class="section-title">
-                <span>1. خدمة العملاء</span>
+                <span>1. خدمة العملاء Customer Service</span>
                 <div class="section-number">200</div>
             </div>
             
             <table class="criteria-table">
                 <thead>
                     <tr>
-                        <th width="5%">الرقم</th>
-                        <th width="30%">المحور الرئيسي</th>
-                        <th width="8%">الدرجة القصوى</th>
-                        <th width="12%">الدرجة المحققة</th>
-                        <th width="10%">غير متوفر</th>
-                        <th width="35%">الملاحظات</th>
+                        <th width="5%">الرقم Number</th>
+                        <th width="30%">المحور الرئيسي Main Criterion</th>
+                        <th width="8%">الدرجة القصوى Max Score</th>
+                        <th width="12%">الدرجة المحققة Achieved Score</th>
+                        <th width="10%">غير متوفر Not Available</th>
+                        <th width="35%">الملاحظات Notes</th>
                     </tr>
                 </thead>
                 <tbody id="service-criteria">
-                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                    <!-- سيتم ملؤها بواسطة JavaScript Will be filled by JavaScript -->
                 </tbody>
             </table>
             
-            <!-- محور 2: النظافة -->
+            <!-- محور 2: النظافة Axis 2: Cleanliness -->
             <div class="section-title">
-                <span>2. النظافة</span>
+                <span>2. النظافة Cleanliness</span>
                 <div class="section-number">300</div>
             </div>
             
             <table class="criteria-table">
                 <thead>
                     <tr>
-                        <th width="5%">الرقم</th>
-                        <th width="30%">المحور الرئيسي</th>
-                        <th width="8%">الدرجة القصوى</th>
-                        <th width="12%">الدرجة المحققة</th>
-                        <th width="10%">غير متوفر</th>
-                        <th width="35%">الملاحظات</th>
+                        <th width="5%">الرقم Number</th>
+                        <th width="30%">المحور الرئيسي Main Criterion</th>
+                        <th width="8%">الدرجة القصوى Max Score</th>
+                        <th width="12%">الدرجة المحققة Achieved Score</th>
+                        <th width="10%">غير متوفر Not Available</th>
+                        <th width="35%">الملاحظات Notes</th>
                     </tr>
                 </thead>
                 <tbody id="cleanliness-criteria">
-                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                    <!-- سيتم ملؤها بواسطة JavaScript Will be filled by JavaScript -->
                 </tbody>
             </table>
             
-            <!-- محور 3: المعدات والتجهيزات -->
+            <!-- محور 3: المعدات والتجهيزات Axis 3: Equipment and Facilities -->
             <div class="section-title">
-                <span>3. المعدات والتجهيزات</span>
+                <span>3. المعدات والتجهيزات Equipment and Facilities</span>
                 <div class="section-number">250</div>
             </div>
             
             <table class="criteria-table">
                 <thead>
                     <tr>
-                        <th width="5%">الرقم</th>
-                        <th width="30%">المحور الرئيسي</th>
-                        <th width="8%">الدرجة القصوى</th>
-                        <th width="12%">الدرجة المحققة</th>
-                        <th width="10%">غير متوفر</th>
-                        <th width="35%">الملاحظات</th>
+                        <th width="5%">الرقم Number</th>
+                        <th width="30%">المحور الرئيسي Main Criterion</th>
+                        <th width="8%">الدرجة القصوى Max Score</th>
+                        <th width="12%">الدرجة المحققة Achieved Score</th>
+                        <th width="10%">غير متوفر Not Available</th>
+                        <th width="35%">الملاحظات Notes</th>
                     </tr>
                 </thead>
                 <tbody id="equipment-criteria">
-                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                    <!-- سيتم ملؤها بواسطة JavaScript Will be filled by JavaScript -->
                 </tbody>
             </table>
             
-            <!-- محور 4: إدارة المطعم -->
+            <!-- محور 4: إدارة المطعم Axis 4: Restaurant Management -->
             <div class="section-title">
-                <span>4. إدارة المطعم</span>
+                <span>4. إدارة المطعم Restaurant Management</span>
                 <div class="section-number">250</div>
             </div>
             
             <table class="criteria-table">
                 <thead>
                     <tr>
-                        <th width="5%">الرقم</th>
-                        <th width="30%">المحور الرئيسي</th>
-                        <th width="8%">الدرجة القصوى</th>
-                        <th width="12%">الدرجة المحققة</th>
-                        <th width="10%">غير متوفر</th>
-                        <th width="35%">الملاحظات</th>
+                        <th width="5%">الرقم Number</th>
+                        <th width="30%">المحور الرئيسي Main Criterion</th>
+                        <th width="8%">الدرجة القصوى Max Score</th>
+                        <th width="12%">الدرجة المحققة Achieved Score</th>
+                        <th width="10%">غير متوفر Not Available</th>
+                        <th width="35%">الملاحظات Notes</th>
                     </tr>
                 </thead>
                 <tbody id="management-criteria">
-                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                    <!-- سيتم ملؤها بواسطة JavaScript Will be filled by JavaScript -->
                 </tbody>
             </table>
             
-            <!-- محور 5: الجودة -->
+            <!-- محور 5: الجودة Axis 5: Quality -->
             <div class="section-title">
-                <span>5. الجودة</span>
+                <span>5. الجودة Quality</span>
                 <div class="section-number">250</div>
             </div>
             
             <table class="criteria-table">
                 <thead>
                     <tr>
-                        <th width="5%">الرقم</th>
-                        <th width="30%">المحور الرئيسي</th>
-                        <th width="8%">الدرجة القصوى</th>
-                        <th width="12%">الدرجة المحققة</th>
-                        <th width="10%">غير متوفر</th>
-                        <th width="35%">الملاحظات</th>
+                        <th width="5%">الرقم Number</th>
+                        <th width="30%">المحور الرئيسي Main Criterion</th>
+                        <th width="8%">الدرجة القصوى Max Score</th>
+                        <th width="12%">الدرجة المحققة Achieved Score</th>
+                        <th width="10%">غير متوفر Not Available</th>
+                        <th width="35%">الملاحظات Notes</th>
                     </tr>
                 </thead>
                 <tbody id="quality-criteria">
-                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                    <!-- سيتم ملؤها بواسطة JavaScript Will be filled by JavaScript -->
                 </tbody>
             </table>
         </div>
 
-        <!-- نتائج التقييم -->
+        <!-- نتائج التقييم Evaluation Results -->
         <div class="results-summary">
-            <h2 class="results-title">ملخص نتائج التقييم</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 10px; font-size: 14px;">(المجموع الكلي يعتمد على العناصر المتاحة فقط)</p>
+            <h2 class="results-title">ملخص نتائج التقييم Evaluation Results Summary</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 10px; font-size: 14px;">(المجموع الكلي يعتمد على العناصر المتاحة فقط) (Total is based on available items only)</p>
             
             <table class="results-table">
                 <thead>
                     <tr>
-                        <th>المحور</th>
-                        <th>الدرجة القصوى</th>
-                        <th>الدرجة المحققة</th>
-                        <th>النسبة %</th>
-                        <th>الدائرة</th>
+                        <th>المحور Axis</th>
+                        <th>الدرجة القصوى Max Score</th>
+                        <th>الدرجة المحققة Achieved Score</th>
+                        <th>النسبة % Percentage</th>
+                        <th>الدائرة Circle</th>
                     </tr>
                 </thead>
                 <tbody id="results-body">
-                    <!-- سيتم ملؤها بواسطة JavaScript -->
+                    <!-- سيتم ملؤها بواسطة JavaScript Will be filled by JavaScript -->
                 </tbody>
             </table>
             
             <div style="margin-top: 25px; text-align: center;">
                 <h3 id="final-evaluation" style="padding: 15px; border-radius: 5px; background-color: #f8f9fa; font-size: 18px;">
-                    إجمالي الدرجات: <span id="total-score-result">0</span> من <span id="total-max-result">1250</span> درجة
+                    إجمالي الدرجات: Total Points: <span id="total-score-result">0</span> من from <span id="total-max-result">1230</span> درجة points
                 </h3>
                 <div style="margin-top: 15px; font-size: 17px;">
-                    <strong>التقييم النهائي:</strong> <span id="evaluation-text">لم يتم التقييم بعد</span>
+                    <strong>التقييم النهائي: Final Evaluation:</strong> <span id="evaluation-text">لم يتم التقييم بعد Not Evaluated Yet</span>
                 </div>
                 <div id="final-circle" class="final-evaluation-circle" style="margin-top: 15px;">
                     -
@@ -1047,55 +1059,55 @@
             </div>
         </div>
 
-        <!-- أزرار التحكم -->
+        <!-- أزرار التحكم Control Buttons -->
         <div class="control-buttons">
-            <button class="btn btn-primary" onclick="calculateResults()">حساب النتائج</button>
-            <button class="btn btn-success" onclick="saveAsPDF()">حفظ كملف PDF</button>
-            <button class="btn btn-warning" onclick="printEvaluation()">طباعة التقرير</button>
-            <button class="btn btn-primary" onclick="resetForm()">إعادة تعيين</button>
+            <button class="btn btn-primary" onclick="calculateResults()">حساب النتائج Calculate Results</button>
+            <button class="btn btn-success" onclick="saveAsPDF()">حفظ كملف PDF Save as PDF</button>
+            <button class="btn btn-warning" onclick="printEvaluation()">طباعة التقرير Print Report</button>
+            <button class="btn btn-primary" onclick="resetForm()">إعادة تعيين Reset</button>
         </div>
     </div>
 
-    <!-- توقيع المطور -->
+    <!-- توقيع المطور Developer Signature -->
     <div class="signature-card">
         <div class="name">Yasser Elkhateeb</div>
-        <div class="title">مطور البرنامج 67011143</div>
+        <div class="title">مطور البرنامج 67011143 Program Developer 67011143</div>
     </div>
 
-    <!-- قالب PDF مخفي -->
+    <!-- قالب PDF مخفي Hidden PDF Template -->
     <div id="pdf-template" style="position: absolute; left: -10000px; top: -10000px; width: 794px; height: 1123px; background: white; padding: 20px; box-sizing: border-box; font-family: 'Times New Roman', serif; font-size: 12px; direction: rtl;">
         <div style="text-align: center; margin-bottom: 15px;">
-            <img src="https://i.postimg.cc/NM2zJWZD/NAIF-LOGO.jpg" alt="شعار الشركة" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #8B0000; margin-bottom: 10px;">
-            <h2 style="color: #8B0000; margin: 0; font-size: 24px; font-weight: bold;">شركة نايف للأغذية</h2>
-            <h3 style="color: #8B0000; margin: 10px 0 15px 0; font-size: 20px; font-weight: bold;">نموذج تقييم المطعم</h3>
+            <img src="https://i.postimg.cc/NM2zJWZD/NAIF-LOGO.jpg" alt="شعار الشركة Company Logo" style="width: 70px; height: 70px; border-radius: 50%; border: 2px solid #8B0000; margin-bottom: 10px;">
+            <h2 style="color: #8B0000; margin: 0; font-size: 24px; font-weight: bold;">شركة نايف للأغذية Naif Food Company</h2>
+            <h3 style="color: #8B0000; margin: 10px 0 15px 0; font-size: 20px; font-weight: bold;">نموذج تقييم المطعم Restaurant Evaluation Form</h3>
             <div style="margin-bottom: 10px; font-size: 16px; font-weight: bold;">
-                <div>المطعم: <span id="pdf-restaurant" style="font-weight: bold;"></span></div>
-                <div>تاريخ التقييم: <span id="pdf-date"></span></div>
-                <div>القائم بالتقييم: <span id="pdf-evaluator"></span></div>
-                <div>مدير المنطقة: <span id="pdf-area-manager"></span> | مدير التشغيل: <span id="pdf-operation-manager"></span></div>
+                <div>المطعم: Restaurant: <span id="pdf-restaurant" style="font-weight: bold;"></span></div>
+                <div>تاريخ التقييم: Evaluation Date: <span id="pdf-date"></span></div>
+                <div>القائم بالتقييم: Evaluator: <span id="pdf-evaluator"></span></div>
+                <div>مدير المنطقة: Area Manager: <span id="pdf-area-manager"></span> | مدير التشغيل: Operation Manager: <span id="pdf-operation-manager"></span></div>
             </div>
         </div>
         
-        <!-- مخطط العناصر الأساسية للتميز في PDF -->
+        <!-- مخطط العناصر الأساسية للتميز في PDF Excellence Elements Diagram in PDF -->
         <div style="margin: 15px 0; text-align: center; border: 1px solid #ddd; padding: 10px; border-radius: 5px;">
-            <h4 style="color: #8B0000; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">العناصر الأساسية للتميز</h4>
+            <h4 style="color: #8B0000; margin: 0 0 10px 0; font-size: 16px; font-weight: bold;">العناصر الأساسية للتميز Core Elements of Excellence</h4>
             <div id="pdf-diagram" style="position: relative; width: 100%; height: 200px; margin: 0 auto;">
-                <!-- سيتم إضافة المخطط هنا -->
+                <!-- سيتم إضافة المخطط هنا Diagram will be added here -->
             </div>
         </div>
         
         <div style="margin-bottom: 15px; padding: 10px; background: #f8f9fa; border-radius: 4px; font-size: 13px;">
-            <h4 style="color: #8B0000; margin: 0 0 8px 0; text-align: center; font-size: 16px;">ملخص النتائج</h4>
+            <h4 style="color: #8B0000; margin: 0 0 8px 0; text-align: center; font-size: 16px;">ملخص النتائج Results Summary</h4>
             <div id="pdf-summary" style="text-align: center;"></div>
         </div>
         
         <table style="font-size: 10px; border-collapse: collapse; width: 100%; margin-bottom: 15px;">
             <thead>
                 <tr>
-                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">المحور</th>
-                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">الدرجة القصوى</th>
-                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">الدرجة المحققة</th>
-                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">النسبة %</th>
+                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">المحور Axis</th>
+                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">الدرجة القصوى Max Score</th>
+                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">الدرجة المحققة Achieved Score</th>
+                    <th style="padding: 8px; border: 1px solid #000; text-align: center; background: #8B0000; color: white;">النسبة % Percentage</th>
                 </tr>
             </thead>
             <tbody id="pdf-results-body">
@@ -1103,9 +1115,9 @@
         </table>
         
         <div style="margin-top: 15px; padding: 10px; border-top: 2px solid #8B0000; font-size: 13px;">
-            <h4 style="color: #8B0000; margin: 0 0 8px 0; text-align: center; font-size: 16px;">التقييم النهائي</h4>
+            <h4 style="color: #8B0000; margin: 0 0 8px 0; text-align: center; font-size: 16px;">التقييم النهائي Final Evaluation</h4>
             <div id="pdf-final-evaluation" style="text-align: center; font-size: 15px; font-weight: bold;"></div>
-            <!-- إضافة الدائرة الملونة للتقييم النهائي في PDF -->
+            <!-- إضافة الدائرة الملونة للتقييم النهائي في PDF Add colored circle for final evaluation in PDF -->
             <div id="pdf-final-circle" style="width: 60px; height: 60px; border-radius: 50%; margin: 10px auto; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 18px; color: white;">
                 -
             </div>
@@ -1113,147 +1125,147 @@
     </div>
 
     <script>
-        // بيانات المطاعم
+        // بيانات المطاعم Restaurants Data
         const restaurantsData = [
-            { name: "الفيحاء", areaManager: "حجازي", operationManager: "طارق بيومي" },
-            { name: "شارع البحرين", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "جمعية العدان والقصور", areaManager: "انور", operationManager: "طارق بيومي" },
-            { name: "الجابرية تكا و فرايد", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "الفحاحيل", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "أبو حليفة", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "الرقعي", areaManager: "عماد", operationManager: "طارق بيومي" },
-            { name: "مشرف", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "النافورة", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "القادسية", areaManager: "حجازي", operationManager: "طارق بيومي" },
-            { name: "صباح السالم", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "الضباعية", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "الشرق", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "الجابرية بنت الديك", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "الجهراء الزويخ", areaManager: "طارق", operationManager: "طارق بيومي" },
-            { name: "الشويخ واره", areaManager: "حجازي", operationManager: "طارق بيومي" },
-            { name: "السيد ياسين", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "الفنطاس", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "السندباد", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "المطار", areaManager: "حجازي", operationManager: "طارق بيومي" },
-            { name: "المنقف", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "حولي بارك", areaManager: "حجازي", operationManager: "طارق بيومي" },
-            { name: "الرقة", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "الرحاب", areaManager: "عماد", operationManager: "طارق بيومي" },
-            { name: "هدية", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "نادي الصليبخات", areaManager: "عماد", operationManager: "طارق بيومي" },
-            { name: "الجهراء الصناعية", areaManager: "حجازي", operationManager: "طارق بيومي" },
-            { name: "الفروانية", areaManager: "عماد", operationManager: "طارق بيومي" },
-            { name: "أسواق القرين", areaManager: "انور", operationManager: "طارق بيومي" },
-            { name: "سلوى", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "سوق الجليب", areaManager: "طارق", operationManager: "طارق بيومi" },
-            { name: "الشهداء", areaManager: "انور", operationManager: "طارق بيومي" },
-            { name: "الدسمة وبنيد القار", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "جمعية صباح الاحمد", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "الافينيوز", areaManager: "طارق", operationManager: "طارق بيومي" },
-            { name: "الصليبية الصناعية", areaManager: "طارق", operationManager: "طارق بيومي" },
-            { name: "جمعية أبوفطيرة", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "غرب أبو فطيرة", areaManager: "انور", operationManager: "طارق بيومي" },
-            { name: "خيطان العصيمي", areaManager: "انور", operationManager: "طارق بيومي" },
-            { name: "الوفرة", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "جمعية القيروان", areaManager: "طارق", operationManager: "طارق بيومي" },
-            { name: "شرق الاحمدي", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "الفروانية فرع 2", areaManager: "عماد", operationManager: "طارق بيومي" },
-            { name: "جمعية الصليبية", areaManager: "طارق", operationManager: "طارق بيومي" },
-            { name: "جمعية الزهراء", areaManager: "انور", operationManager: "طارق بيومي" },
-            { name: "جمعية مدينة جابر الأحمد", areaManager: "عماد", operationManager: "طارق بيومي" },
-            { name: "الخيران أوتليت مول", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "الخيران أويا مول", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "الجهراء ليالي الشرق", areaManager: "حجازي", operationManager: "طارق بيومي" },
-            { name: "الجهراء مجمع مكة", areaManager: "طارق", operationManager: "طارق بيومي" },
-            { name: "العارضية الجديد", areaManager: "عماد", operationManager: "طارق بيومي" },
-            { name: "الري", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "مارينا مول", areaManager: "مختار", operationManager: "هاني عبدالله" },
-            { name: "صباح السالم (العرين)", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "مول 360", areaManager: "انور", operationManager: "طارق بيومي" },
-            { name: "الخيول", areaManager: "ثروت", operationManager: "هاني عبدالله" },
-            { name: "مجمع الكوت", areaManager: "وليد", operationManager: "هاني عبدالله" },
-            { name: "كبد", areaManager: "طارق", operationManager: "طارق بيومي" },
-            { name: "سعد العبدالله", areaManager: "مختار", operationManager: "هاني عبدالله" }
+            { name: "الفيحاء Al-Faiha", areaManager: "حجازي Hajazi", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "شارع البحرين Bahrain Street", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "جمعية العدان والقصور Adan and Qusor Association", areaManager: "انور Anwar", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الجابرية تكا و فرايد Jabriya Taka and Fried", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الفحاحيل Al-Fahaheel", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "أبو حليفة Abu Halifa", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الرقعي Al-Raqqi", areaManager: "عماد Emad", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "مشرف Mushrif", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "النافورة Al-Nafoura", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "القادسية Al-Qadisiyah", areaManager: "حجازي Hajazi", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "صباح السالم Sabah Al-Salem", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الضباعية Al-Dhababiya", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الشرق Al-Sharq", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الجابرية بنت الديك Jabriya Bint Al-Deek", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الجهراء الزويخ Al-Jahra Al-Zuwaikh", areaManager: "طارق Tariq", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الشويخ واره Al-Shuwaikh Wara", areaManager: "حجازي Hajazi", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "السيد ياسين Al-Sayed Yassin", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الفنطاس Al-Fintas", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "السندباد Al-Sindbad", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "المطار Al-Matar", areaManager: "حجازي Hajazi", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "المنقف Al-Mangaf", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "حولي بارك Hawalli Park", areaManager: "حجازي Hajazi", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الرقة Al-Riqqa", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الرحاب Al-Rehab", areaManager: "عماد Emad", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "هدية Hadiya", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "نادي الصليبخات Al-Sulaibikhat Club", areaManager: "عماد Emad", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الجهراء الصناعية Al-Jahra Industrial", areaManager: "حجازي Hajazi", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الفروانية Al-Farwaniya", areaManager: "عماد Emad", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "أسواق القرين Al-Qurain Markets", areaManager: "انور Anwar", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "سلوى Salwa", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "سوق الجليب Al-Jleeb Market", areaManager: "طارق Tariq", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الشهداء Al-Shuhada", areaManager: "انور Anwar", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الدسمة وبنيد القار Al-Dasma and Bunaid Al-Qar", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "جمعية صباح الاحمد Sabah Al-Ahmad Association", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الافينيوز The Avenues", areaManager: "طارق Tariq", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الصليبية الصناعية Al-Sulaibiya Industrial", areaManager: "طارق Tariq", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "جمعية أبوفطيرة Abu Futaira Association", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "غرب أبو فطيرة West Abu Futaira", areaManager: "انور Anwar", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "خيطان العصيمي Khaitan Al-Osaimi", areaManager: "انور Anwar", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الوفرة Al-Wafra", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "جمعية القيروان Al-Qirwan Association", areaManager: "طارق Tariq", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "شرق الاحمدي East Ahmadi", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الفروانية فرع 2 Al-Farwaniya Branch 2", areaManager: "عماد Emad", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "جمعية الصليبية Al-Sulaibiya Association", areaManager: "طارق Tariq", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "جمعية الزهراء Al-Zahra Association", areaManager: "انور Anwar", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "جمعية مدينة جابر الأحمد Jaber Al-Ahmad City Association", areaManager: "عماد Emad", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الخيران أوتليت مول Al-Khiran Outlet Mall", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الخيران أويا مول Al-Khiran Oya Mall", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "الجهراء ليالي الشرق Al-Jahra Layali Al-Sharq", areaManager: "حجازي Hajazi", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الجهراء مجمع مكة Al-Jahra Makkah Complex", areaManager: "طارق Tariq", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "العارضية الجديد New Al-Ardiya", areaManager: "عماد Emad", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الري Al-Rai", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "مارينا مول Marina Mall", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "صباح السالم (العرين) Sabah Al-Salem (Al-Areen)", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "مول 360 Mall 360", areaManager: "انور Anwar", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "الخيول Al-Khuyul", areaManager: "ثروت Tharwat", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "مجمع الكوت Al-Kout Complex", areaManager: "وليد Waleed", operationManager: "هاني عبدالله Hani Abdullah" },
+            { name: "كبد Kabd", areaManager: "طارق Tariq", operationManager: "طارق بيومي Tariq Bayoumi" },
+            { name: "سعد العبدالله Saad Al-Abdullah", areaManager: "مختار Mokhtar", operationManager: "هاني عبدالله Hani Abdullah" }
         ];
 
-        // بيانات نموذج التقييم
+        // بيانات نموذج التقييم Evaluation Form Data
         const evaluationData = {
             service: [
-                { id: "1.1", name: "الزي الموحد", maxScore: 15 },
-                { id: "1.2", name: "الترحيب بالعملاء", maxScore: 25 },
-                { id: "1.3", name: "الاقتراحات", maxScore: 20 },
-                { id: "1.4", name: "شكر العميل", maxScore: 20 },
-                { id: "1.5", name: "وقت الخدمة", maxScore: 35 },
-                { id: "1.6", name: "طريقة الحديث", maxScore: 25 },
-                { id: "1.7", name: "توفر النقدية", maxScore: 15 },
-                { id: "1.8", name: "تجهيز الطاولات", maxScore: 20 },
-                { id: "1.9", name: "تكرار الطلب", maxScore: 15 },
-                { id: "1.10", name: "إصدار الفاتورة", maxScore: 10 }
+                { id: "1.1", name: "الزي الموحد Uniform", maxScore: 15 },
+                { id: "1.2", name: "الترحيب بالعملاء Welcoming Customers", maxScore: 25 },
+                { id: "1.3", name: "الاقتراحات Suggestions", maxScore: 20 },
+                { id: "1.4", name: "شكر العميل Thanking Customer", maxScore: 20 },
+                { id: "1.5", name: "وقت الخدمة Service Time", maxScore: 35 },
+                { id: "1.6", name: "طريقة الحديث Conversation Manner", maxScore: 25 },
+                { id: "1.7", name: "توفر النقدية Cash Availability", maxScore: 15 },
+                { id: "1.8", name: "تجهيز الطاولات Table Setup", maxScore: 20 },
+                { id: "1.9", name: "تكرار الطلب Order Repetition", maxScore: 15 },
+                { id: "1.10", name: "إصدار الفاتورة Invoice Issuance", maxScore: 10 }
             ],
             cleanliness: [
-                { id: "2.1", name: "اللافتات الخارجية", maxScore: 25 },
-                { id: "2.2", name: "الأبواب والنوافذ", maxScore: 30 },
-                { id: "2.3", name: "حاويات القمامة", maxScore: 35 },
-                { id: "2.4", name: "الصالة/الأرضية/الجدران", maxScore: 40 },
-                { id: "2.5", name: "الطاولات والكراسي والديكور", maxScore: 35 },
-                { id: "2.6", name: "القمامة/مبيد الحشرات", maxScore: 30 },
-                { id: "2.7", name: "الحمامات", maxScore: 40 },
-                { id: "2.8", name: "قائمة الأسعار/الكاونتر", maxScore: 20 },
-                { id: "2.9", name: "الثلاجات والبرادات", maxScore: 25 },
-                { id: "2.10", name: "المطبخ/المغاسل", maxScore: 20 }
+                { id: "2.1", name: "اللافتات الخارجية External Signage", maxScore: 25 },
+                { id: "2.2", name: "الأبواب والنوافذ Doors and Windows", maxScore: 30 },
+                { id: "2.3", name: "حاويات القمامة Trash Containers", maxScore: 35 },
+                { id: "2.4", name: "الصالة/الأرضية/الجدران Hall/Floor/Walls", maxScore: 40 },
+                { id: "2.5", name: "الطاولات والكراسي والديكور Tables, Chairs and Decor", maxScore: 35 },
+                { id: "2.6", name: "القمامة/مبيد الحشرات Trash/Pesticides", maxScore: 30 },
+                { id: "2.7", name: "الحمامات Bathrooms", maxScore: 40 },
+                { id: "2.8", name: "قائمة الأسعار/الكاونتر Price List/Counter", maxScore: 20 },
+                { id: "2.9", name: "الثلاجات والبرادات Refrigerators and Coolers", maxScore: 25 },
+                { id: "2.10", name: "المطبخ/المغاسل Kitchen/Sinks", maxScore: 20 }
             ],
             equipment: [
-                { id: "3.1", name: "الشاورما/الشواية", maxScore: 30 },
-                { id: "3.2", name: "المخزن", maxScore: 25 },
-                { id: "3.3", name: "الشواية", maxScore: 35 },
-                { id: "3.4", name: "ثلاجة المشروبات/ماكينة بيبسي", maxScore: 30 },
-                { id: "3.5", name: "الميكروويف", maxScore: 20 },
-                { id: "3.6", name: "الشفاطات/الفلاتر", maxScore: 35 },
-                { id: "3.7", name: "سيارات التوصيل", maxScore: 25 },
-                { id: "3.8", name: "خبز التوست/أدوات البرياني", maxScore: 20 },
-                { id: "3.9", name: "طاولة التحضير والتقطيع", maxScore: 20 },
-                { id: "3.10", name: "ماكينة بنت الديك", maxScore: 10 }
+                { id: "3.1", name: "الشاورما/الشواية Shawarma/Grill", maxScore: 30 },
+                { id: "3.2", name: "المخزن Storage", maxScore: 25 },
+                { id: "3.3", name: "الشواية Grill", maxScore: 35 },
+                { id: "3.4", name: "ثلاجة المشروبات/ماكينة بيبسي Beverage Refrigerator/Pepsi Machine", maxScore: 30 },
+                { id: "3.5", name: "الميكروويف Microwave", maxScore: 20 },
+                { id: "3.6", name: "الشفاطات/الفلاتر Hoods/Filters", maxScore: 35 },
+                { id: "3.7", name: "سيارات التوصيل Delivery Vehicles", maxScore: 25 },
+                { id: "3.8", name: "خبز التوست والأرز Toast Bread and Rice", maxScore: 20 },
+                { id: "3.9", name: "طاولة التحضير والتقطيع Preparation and Cutting Table", maxScore: 20 },
+                { id: "3.10", name: "الديسبليه يعمل جيداً Display Works Well", maxScore: 10 }
             ],
             management: [
-                { id: "4.1", name: "المحاسب/الكاشير", maxScore: 30 },
-                { id: "4.2", name: "فلاتر المياه", maxScore: 35 },
-                { id: "4.3", name: "المنهول", maxScore: 15 },
-                { id: "4.4", name: "المكيف", maxScore: 40 },
-                { id: "4.5", name: "شاشة العرض", maxScore: 20 },
-                { id: "4.6", name: "رخصة المطعم", maxScore: 30 },
-                { id: "4.7", name: "كروت الصحة", maxScore: 30 },
-                { id: "4.8", name: "تقرير المطعم", maxScore: 20 },
-                { id: "4.9", name: "حضور الموظفين", maxScore: 20 },
-                { id: "4.10", name: "درجة حرارة الثلاجة", maxScore: 10 }
+                { id: "4.1", name: "المحاسب/الكاشير Accountant/Cashier", maxScore: 30 },
+                { id: "4.2", name: "فلاتر المياه Water Filters", maxScore: 35 },
+                { id: "4.3", name: "المنهول Manhole", maxScore: 15 },
+                { id: "4.4", name: "المكيف Air Conditioner", maxScore: 40 },
+                { id: "4.5", name: "شاشة العرض Display Screen", maxScore: 20 },
+                { id: "4.6", name: "رخصة المطعم Restaurant License", maxScore: 30 },
+                { id: "4.7", name: "كروت الصحة Health Cards", maxScore: 30 },
+                { id: "4.8", name: "تقرير المطعم Restaurant Report", maxScore: 20 },
+                { id: "4.9", name: "حضور الموظفين Staff Attendance", maxScore: 20 },
+                { id: "4.10", name: "درجة حرارة الثلاجة Refrigerator Temperature", maxScore: 10 }
             ],
             quality: [
-                { id: "5.1", name: "جودة الخبز", maxScore: 25 },
-                { id: "5.2", name: "جودة الدجاج", maxScore: 30 },
-                { id: "5.3", name: "جودة الخضروات", maxScore: 25 },
-                { id: "5.4", name: "جودة/كمية السلطات", maxScore: 20 },
-                { id: "5.5", name: "كمية الطعام", maxScore: 25 },
-                { id: "5.6", name: "استخدام البلو فلام", maxScore: 15 },
-                { id: "5.7", name: "توقيت الطهي", maxScore: 20 },
-                { id: "5.8", name: "جودة الخلط", maxScore: 20 },
-                { id: "5.9", name: "أوراق المطعم", maxScore: 15 },
-                { id: "5.10", name: "وجبات مهدرة", maxScore: 20 },
-                { id: "5.11", name: "الدخول والخروج", maxScore: 15 }
+                { id: "5.1", name: "جودة الخبز Bread Quality", maxScore: 25 },
+                { id: "5.2", name: "جودة الدجاج Chicken Quality", maxScore: 30 },
+                { id: "5.3", name: "جودة الخضروات Vegetable Quality", maxScore: 25 },
+                { id: "5.4", name: "جودة/كمية السلطات Salad Quality/Quantity", maxScore: 20 },
+                { id: "5.5", name: "كمية الطعام Food Quantity", maxScore: 25 },
+                { id: "5.6", name: "استخدام اللف والحزم Using Wrapping and Packing", maxScore: 15 },
+                { id: "5.7", name: "توقيت الطهي Cooking Timing", maxScore: 20 },
+                { id: "5.8", name: "جودة الخلط Mixing Quality", maxScore: 20 },
+                { id: "5.9", name: "أوراق المطعم Restaurant Papers", maxScore: 15 },
+                { id: "5.10", name: "وجبات مهدرة Wasted Meals", maxScore: 20 },
+                { id: "5.11", name: "الدخول والخروج Entry and Exit", maxScore: 15 }
             ]
         };
 
-        // تهيئة النموذج
+        // تهيئة النموذج Initialize Form
         function initializeForm() {
-            // تهيئة البحث الديناميكي عن المطاعم
+            // تهيئة البحث الديناميكي عن المطاعم Setup Dynamic Restaurant Search
             setupRestaurantSearch();
             
-            // ملء معايير التقييم
+            // ملء معايير التقييم Fill Evaluation Criteria
             fillCriteriaTable('service-criteria', evaluationData.service);
             fillCriteriaTable('cleanliness-criteria', evaluationData.cleanliness);
             fillCriteriaTable('equipment-criteria', evaluationData.equipment);
             fillCriteriaTable('management-criteria', evaluationData.management);
             fillCriteriaTable('quality-criteria', evaluationData.quality);
             
-            // إضافة مستمعين للأحداث لحساب النتائج تلقائياً
+            // إضافة مستمعين للأحداث لحساب النتائج تلقائياً Add Event Listeners for Automatic Results Calculation
             document.querySelectorAll('.score-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     calculateResults();
@@ -1267,7 +1279,7 @@
                     const hiddenInput = document.getElementById(itemId);
                     
                     if (this.checked) {
-                        // إذا تم تحديد "غير متوفر"، ضع الدرجة 0
+                        // إذا تم تحديد "غير متوفر"، ضع الدرجة 0 If "Not Available" is checked, set score to 0
                         scoreBtn.textContent = '0';
                         scoreBtn.classList.remove('active');
                         if (hiddenInput) hiddenInput.value = '0';
@@ -1276,17 +1288,17 @@
                 });
             });
             
-            // حساب النتائج الأولية
+            // حساب النتائج الأولية Calculate Initial Results
             calculateResults();
         }
 
-        // إعداد البحث الديناميكي عن المطاعم
+        // إعداد البحث الديناميكي عن المطاعم Setup Dynamic Restaurant Search
         function setupRestaurantSearch() {
             const searchInput = document.getElementById('restaurant-search');
             const dropdown = document.getElementById('restaurant-dropdown');
             const selectedRestaurantInput = document.getElementById('selected-restaurant');
             
-            // ملء القائمة المنسدلة
+            // ملء القائمة المنسدلة Fill Dropdown
             restaurantsData.forEach(restaurant => {
                 const item = document.createElement('div');
                 item.className = 'restaurant-dropdown-item';
@@ -1300,7 +1312,7 @@
                 dropdown.appendChild(item);
             });
             
-            // البحث الديناميكي
+            // البحث الديناميكي Dynamic Search
             searchInput.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase();
                 const items = dropdown.querySelectorAll('.restaurant-dropdown-item');
@@ -1321,7 +1333,7 @@
                     dropdown.style.display = 'none';
                 }
                 
-                // إذا كان النص مطابقاً تماماً لمطعم
+                // إذا كان النص مطابقاً تماماً لمطعم If text exactly matches a restaurant
                 const exactMatch = restaurantsData.find(r => r.name.toLowerCase() === searchTerm);
                 if (exactMatch) {
                     selectedRestaurantInput.value = exactMatch.name;
@@ -1332,7 +1344,7 @@
                 }
             });
             
-            // إغلاق القائمة عند النقر خارجها
+            // إغلاق القائمة عند النقر خارجها Close dropdown when clicking outside
             document.addEventListener('click', function(e) {
                 if (!searchInput.contains(e.target) && !dropdown.contains(e.target)) {
                     dropdown.style.display = 'none';
@@ -1340,7 +1352,7 @@
             });
         }
 
-        // تحديث تفاصيل المطعم
+        // تحديث تفاصيل المطعم Update Restaurant Details
         function updateRestaurantDetails() {
             const selectedRestaurant = document.getElementById('selected-restaurant').value;
             
@@ -1356,7 +1368,7 @@
             }
         }
 
-        // ملء جدول المعايير
+        // ملء جدول المعايير Fill Criteria Table
         function fillCriteriaTable(tableId, criteria) {
             const tableBody = document.getElementById(tableId);
             tableBody.innerHTML = '';
@@ -1375,19 +1387,19 @@
                         <input type="checkbox" class="not-available-checkbox" data-id="na-${item.id}">
                     </td>
                     <td class="notes">
-                        <input type="text" id="notes-${item.id}" placeholder="أضف ملاحظاتك هنا">
+                        <input type="text" id="notes-${item.id}" placeholder="أضف ملاحظاتك هنا Add your notes here">
                     </td>
                 `;
                 tableBody.appendChild(row);
                 
-                // إضافة حدث النقر على زر الدرجة
+                // إضافة حدث النقر على زر الدرجة Add Click Event to Score Button
                 const scoreBtn = row.querySelector('.score-btn');
                 scoreBtn.addEventListener('click', function() {
                     const notAvailableCheckbox = row.querySelector('.not-available-checkbox');
                     
-                    // إذا كان العنصر غير متوفر، لا يمكن تغيير الدرجة
+                    // إذا كان العنصر غير متوفر، لا يمكن تغيير الدرجة If item is not available, cannot change score
                     if (notAvailableCheckbox && notAvailableCheckbox.checked) {
-                        alert('لا يمكن تعديل درجة عنصر غير متوفر. يرجى إلغاء تحديد "غير متوفر" أولاً.');
+                        alert('لا يمكن تعديل درجة عنصر غير متوفر. يرجى إلغاء تحديد "غير متوفر" أولاً. Cannot modify score of unavailable item. Please uncheck "Not Available" first.');
                         return;
                     }
                     
@@ -1397,7 +1409,7 @@
                     this.textContent = newScore;
                     this.classList.toggle('active', newScore === maxScore);
                     
-                    // تحديث الحقل المخفي
+                    // تحديث الحقل المخفي Update Hidden Field
                     const hiddenInput = document.getElementById(this.getAttribute('data-id'));
                     if (hiddenInput) {
                         hiddenInput.value = newScore;
@@ -1408,24 +1420,24 @@
             });
         }
 
-        // حساب النتائج
+        // حساب النتائج Calculate Results
         function calculateResults() {
             let totalAchieved = 0;
             let totalMax = 0;
             const results = [];
             
-            // حساب لكل محور
+            // حساب لكل محور Calculate for each axis
             const categories = [
-                { id: 'service', name: 'خدمة العملاء', maxTotal: 200 },
-                { id: 'cleanliness', name: 'النظافة', maxTotal: 300 },
-                { id: 'equipment', name: 'المعدات والتجهيزات', maxTotal: 250 },
-                { id: 'management', name: 'إدارة المطعم', maxTotal: 250 },
-                { id: 'quality', name: 'الجودة', maxTotal: 250 }
+                { id: 'service', name: 'خدمة العملاء Customer Service', maxTotal: 200 },
+                { id: 'cleanliness', name: 'النظافة Cleanliness', maxTotal: 300 },
+                { id: 'equipment', name: 'المعدات والتجهيزات Equipment and Facilities', maxTotal: 250 },
+                { id: 'management', name: 'إدارة المطعم Restaurant Management', maxTotal: 250 },
+                { id: 'quality', name: 'الجودة Quality', maxTotal: 250 }
             ];
             
             categories.forEach(category => {
                 let achieved = 0;
-                let availableMax = 0; // للعناصر المتوفرة فقط
+                let availableMax = 0; // للعناصر المتوفرة فقط For available items only
                 
                 evaluationData[category.id].forEach(item => {
                     const notAvailableCheckbox = document.querySelector(`input[data-id="na-${item.id}"]`);
@@ -1437,7 +1449,7 @@
                         const scoreInput = document.getElementById(`score-${item.id}`);
                         const score = parseInt(scoreInput.value) || 0;
                         
-                        // التأكد من أن الدرجة المحققة لا تتجاوز الدرجة القصوى
+                        // التأكد من أن الدرجة المحققة لا تتجاوز الدرجة القصوى Ensure achieved score doesn't exceed max score
                         if (score > item.maxScore) {
                             scoreInput.value = item.maxScore;
                             achieved += item.maxScore;
@@ -1447,7 +1459,7 @@
                     }
                 });
                 
-                // إذا كانت هناك عناصر غير متوفرة، نعدل الدرجة القصوى
+                // إذا كانت هناك عناصر غير متوفرة، نعدل الدرجة القصوى If there are unavailable items, adjust max score
                 const adjustedMax = availableMax > 0 ? availableMax : 0;
                 
                 totalAchieved += achieved;
@@ -1463,26 +1475,26 @@
                     originalMax: category.maxTotal
                 });
                 
-                // تحديث المربعات في المخطط (للمحاور الأربعة الأولى فقط)
+                // تحديث المربعات في المخطط (للمحاور الأربعة الأولى فقط) Update boxes in diagram (only for first four axes)
                 if (category.id !== 'quality') {
                     updateDiagramBox(category.id, achieved, adjustedMax);
                 }
             });
             
-            // حساب النسبة الإجمالية
+            // حساب النسبة الإجمالية Calculate Total Percentage
             const totalPercentage = totalMax > 0 ? Math.round((totalAchieved / totalMax) * 100) : 0;
             
-            // تحديث الكروت الإحصائية
+            // تحديث الكروت الإحصائية Update Statistics Cards
             updateStatsCards(totalAchieved, totalPercentage, totalMax);
             
-            // تحديث جدول النتائج
+            // تحديث جدول النتائج Update Results Table
             updateResultsTable(results, totalAchieved, totalPercentage, totalMax);
             
-            // تحديث التقييم النهائي
+            // تحديث التقييم النهائي Update Final Evaluation
             updateFinalEvaluation(totalPercentage, totalAchieved, totalMax);
         }
 
-        // تحديث المربعات في المخطط
+        // تحديث المربعات في المخطط Update Boxes in Diagram
         function updateDiagramBox(categoryId, achieved, max) {
             const boxElement = document.getElementById(`${categoryId}-box`);
             if (boxElement) {
@@ -1490,50 +1502,50 @@
                 const totalElement = boxElement.querySelector('.axis-total');
                 
                 if (scoreElement) scoreElement.textContent = achieved;
-                if (totalElement) totalElement.textContent = `من ${max}`;
+                if (totalElement) totalElement.innerHTML = `من <span class="axis-number">${max}</span>`; // تحديث مع span Update with span
                 
-                // تحديث لون المربع بناءً على النسبة
+                // تحديث لون المربع بناءً على النسبة Update box color based on percentage
                 const percentage = max > 0 ? Math.round((achieved / max) * 100) : 0;
                 boxElement.style.borderColor = getPercentageColorForDiagram(percentage);
             }
         }
 
-        // تحديث الكروت الإحصائية
+        // تحديث الكروت الإحصائية Update Statistics Cards
         function updateStatsCards(totalAchieved, totalPercentage, totalMax) {
             document.getElementById('total-score').textContent = totalAchieved;
             document.getElementById('total-percentage').textContent = totalPercentage + '%';
             
-            // حساب درجة الجودة (المتبقي)
+            // حساب درجة الجودة (المتبقي) Calculate Quality Score (Remaining)
             const qualityScore = totalMax - totalAchieved;
             document.getElementById('quality-score').textContent = qualityScore;
             
-            // تحديث لون الكروت حسب النسبة
+            // تحديث لون الكروت حسب النسبة Update card colors based on percentage
             const statCards = document.querySelectorAll('.stat-card');
             statCards.forEach(card => {
                 card.classList.remove('red', 'yellow', 'green', 'gold');
                 
                 if (totalPercentage < 75) {
                     card.classList.add('red');
-                    document.getElementById('final-grade').textContent = '🔴 تدخل';
+                    document.getElementById('final-grade').textContent = '🔴 تدخل Intervention';
                 } else if (totalPercentage >= 75 && totalPercentage < 85) {
                     card.classList.add('yellow');
-                    document.getElementById('final-grade').textContent = '🟡 متابعة';
+                    document.getElementById('final-grade').textContent = '🟡 متابعة Follow-up';
                 } else if (totalPercentage >= 85 && totalPercentage < 90) {
                     card.classList.add('green');
-                    document.getElementById('final-grade').textContent = '🟢 جيد';
+                    document.getElementById('final-grade').textContent = '🟢 جيد Good';
                 } else if (totalPercentage >= 90) {
                     card.classList.add('gold');
-                    document.getElementById('final-grade').textContent = '🟡✨ ممتاز';
+                    document.getElementById('final-grade').textContent = '🟡✨ ممتاز Excellent';
                 }
             });
         }
 
-        // تحديث جدول النتائج
+        // تحديث جدول النتائج Update Results Table
         function updateResultsTable(results, totalAchieved, totalPercentage, totalMax) {
             const resultsBody = document.getElementById('results-body');
             resultsBody.innerHTML = '';
             
-            // إضافة صفوف النتائج لكل محور
+            // إضافة صفوف النتائج لكل محور Add result rows for each axis
             results.forEach(result => {
                 const row = document.createElement('tr');
                 const colorClass = getPercentageColorClass(result.percentage);
@@ -1553,14 +1565,14 @@
                 resultsBody.appendChild(row);
             });
             
-            // إضافة صف الإجمالي
+            // إضافة صف الإجمالي Add Total Row
             const totalRow = document.createElement('tr');
             totalRow.classList.add('total-row');
             const totalColor = getPercentageColor(totalPercentage);
             const totalCircleColor = getPercentageColorForCircle(totalPercentage);
             
             totalRow.innerHTML = `
-                <td><strong>الإجمالي (1-5)</strong></td>
+                <td><strong>الإجمالي (1-5) Total (1-5)</strong></td>
                 <td><strong>${totalMax}</strong></td>
                 <td><strong>${totalAchieved}</strong></td>
                 <td class="percentage-cell" style="background-color: ${totalColor};"><strong>${totalPercentage}%</strong></td>
@@ -1572,12 +1584,12 @@
             `;
             resultsBody.appendChild(totalRow);
             
-            // تحديث نتيجة الإجمالي
+            // تحديث نتيجة الإجمالي Update Total Result
             document.getElementById('total-score-result').textContent = totalAchieved;
             document.getElementById('total-max-result').textContent = totalMax;
         }
 
-        // تحديث التقييم النهائي
+        // تحديث التقييم النهائي Update Final Evaluation
         function updateFinalEvaluation(percentage, totalAchieved, totalMax) {
             const evaluationText = document.getElementById('evaluation-text');
             const finalEvaluation = document.getElementById('final-evaluation');
@@ -1586,25 +1598,25 @@
             let color, text, circleColor;
             
             if (percentage < 75) {
-                text = 'أحمر - يحتاج تدخل فوري';
+                text = 'أحمر - يحتاج تدخل فوري Red - Needs Immediate Intervention';
                 color = '#e74c3c';
                 circleColor = '#e74c3c';
                 finalEvaluation.style.backgroundColor = '#ffeaea';
                 finalEvaluation.style.color = '#e74c3c';
             } else if (percentage >= 75 && percentage < 85) {
-                text = 'أصفر - يحتاج متابعة';
+                text = 'أصفر - يحتاج متابعة Yellow - Needs Follow-up';
                 color = '#f39c12';
                 circleColor = '#f39c12';
                 finalEvaluation.style.backgroundColor = '#fff9e6';
                 finalEvaluation.style.color = '#f39c12';
             } else if (percentage >= 85 && percentage < 90) {
-                text = 'أخضر - أداء جيد';
+                text = 'أخضر - أداء جيد Green - Good Performance';
                 color = '#27ae60';
                 circleColor = '#27ae60';
                 finalEvaluation.style.backgroundColor = '#e8f7ef';
                 finalEvaluation.style.color = '#27ae60';
             } else if (percentage >= 90) {
-                text = 'ذهبي - أداء ممتاز';
+                text = 'ذهبي - أداء ممتاز Golden - Excellent Performance';
                 color = '#b8860b';
                 circleColor = '#ffd700';
                 finalEvaluation.style.backgroundColor = '#fffce6';
@@ -1614,7 +1626,7 @@
             evaluationText.textContent = text;
             evaluationText.style.color = color;
             
-            // تحديث الدائرة
+            // تحديث الدائرة Update Circle
             if (finalCircle) {
                 finalCircle.style.backgroundColor = circleColor;
                 finalCircle.textContent = percentage + '%';
@@ -1622,7 +1634,7 @@
             }
         }
 
-        // الحصول على لون النسبة المئوية
+        // الحصول على لون النسبة المئوية Get Percentage Color
         function getPercentageColor(percentage) {
             if (percentage < 75) return '#ffeaea';
             if (percentage >= 75 && percentage < 85) return '#fff9e6';
@@ -1630,7 +1642,7 @@
             return '#fffce6';
         }
 
-        // الحصول على لون النسبة المئوية للمخطط
+        // الحصول على لون النسبة المئوية للمخطط Get Percentage Color for Diagram
         function getPercentageColorForDiagram(percentage) {
             if (percentage < 75) return '#e74c3c';
             if (percentage >= 75 && percentage < 85) return '#f39c12';
@@ -1638,7 +1650,7 @@
             return '#ffd700';
         }
 
-        // الحصول على لون الدائرة للنسبة المئوية
+        // الحصول على لون الدائرة للنسبة المئوية Get Circle Color for Percentage
         function getPercentageColorForCircle(percentage) {
             if (percentage < 75) return '#e74c3c';
             if (percentage >= 75 && percentage < 85) return '#f39c12';
@@ -1646,7 +1658,7 @@
             return '#ffd700';
         }
 
-        // الحصول على فئة اللون للنسبة المئوية
+        // الحصول على فئة اللون للنسبة المئوية Get Color Class for Percentage
         function getPercentageColorClass(percentage) {
             if (percentage < 75) return 'red';
             if (percentage >= 75 && percentage < 85) return 'yellow';
@@ -1654,25 +1666,25 @@
             return 'gold';
         }
 
-        // حفظ التقرير كملف PDF
+        // حفظ التقرير كملف PDF Save Report as PDF
         async function saveAsPDF() {
             if (!window.jspdf) {
-                alert('مكتبة PDF غير محملة. يرجى التحقق من الاتصال بالإنترنت.');
+                alert('مكتبة PDF غير محملة. يرجى التحقق من الاتصال بالإنترنت. PDF library not loaded. Please check internet connection.');
                 return;
             }
             
             try {
-                // حساب النتائج أولاً
+                // حساب النتائج أولاً Calculate results first
                 calculateResults();
                 
-                // تحضير بيانات PDF
+                // تحضير بيانات PDF Prepare PDF data
                 const today = new Date();
                 const formattedDate = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
                 document.getElementById('pdf-date').textContent = formattedDate;
                 
-                // إضافة اسم المطعم والمعلومات
+                // إضافة اسم المطعم والمعلومات Add restaurant name and information
                 const selectedRestaurant = document.getElementById('selected-restaurant').value;
-                document.getElementById('pdf-restaurant').textContent = selectedRestaurant || 'غير محدد';
+                document.getElementById('pdf-restaurant').textContent = selectedRestaurant || 'غير محدد Not Specified';
                 
                 const restaurant = restaurantsData.find(r => r.name === selectedRestaurant);
                 if (restaurant) {
@@ -1683,56 +1695,56 @@
                     document.getElementById('pdf-operation-manager').textContent = '-';
                 }
                 
-                document.getElementById('pdf-evaluator').textContent = document.getElementById('evaluator-name').value || 'غير محدد';
+                document.getElementById('pdf-evaluator').textContent = document.getElementById('evaluator-name').value || 'غير محدد Not Specified';
                 
-                // حساب النتائج الإجمالية
+                // حساب النتائج الإجمالية Calculate total results
                 const totalAchieved = parseInt(document.getElementById('total-score').textContent);
                 const totalPercentage = parseInt(document.getElementById('total-percentage').textContent);
                 const totalMax = parseInt(document.getElementById('total-max-result').textContent);
                 const evaluationText = document.getElementById('evaluation-text').textContent;
                 
                 document.getElementById('pdf-summary').innerHTML = `
-                    <div>إجمالي الدرجات: <strong>${totalAchieved}</strong> من <strong>${totalMax}</strong> درجة</div>
-                    <div>النسبة المئوية: <strong>${totalPercentage}%</strong></div>
+                    <div>إجمالي الدرجات: Total Points: <strong>${totalAchieved}</strong> من from <strong>${totalMax}</strong> درجة points</div>
+                    <div>النسبة المئوية: Percentage: <strong>${totalPercentage}%</strong></div>
                 `;
                 
-                // إعداد مخطط PDF مبسط
+                // إعداد مخطط PDF مبسط Prepare simplified PDF diagram
                 const pdfDiagram = document.getElementById('pdf-diagram');
                 pdfDiagram.innerHTML = `
                     <div style="position: relative; width: 300px; height: 150px; margin: 0 auto;">
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: linear-gradient(135deg, #B22222, #8B0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 12px; text-align: center; border: 3px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-                            الهدف:<br>الجودة
+                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: linear-gradient(135deg, #B22222, #8B0000); border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-weight: bold; font-size: 8px; text-align: center; border: 2px solid white; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+                            الهدف: Goal:<br>الجودة Quality
                         </div>
                         <div style="position: absolute; top: 20px; right: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #B22222; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
-                            <div style="font-weight: bold;">خدمة العملاء</div>
+                            <div style="font-weight: bold;">خدمة العملاء Customer Service</div>
                             <div style="font-size: 12px; font-weight: bold;">${document.querySelector('#service-box .axis-score').textContent}</div>
-                            <div>من ${document.querySelector('#service-box .axis-total').textContent.replace('من ', '')}</div>
+                            <div>من from <span style="font-weight: bold;">${document.querySelector('#service-box .axis-number').textContent}</span></div>
                         </div>
                         <div style="position: absolute; top: 20px; left: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #8B0000; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
-                            <div style="font-weight: bold;">النظافة</div>
+                            <div style="font-weight: bold;">النظافة Cleanliness</div>
                             <div style="font-size: 12px; font-weight: bold;">${document.querySelector('#cleanliness-box .axis-score').textContent}</div>
-                            <div>من ${document.querySelector('#cleanliness-box .axis-total').textContent.replace('من ', '')}</div>
+                            <div>من from <span style="font-weight: bold;">${document.querySelector('#cleanliness-box .axis-number').textContent}</span></div>
                         </div>
                         <div style="position: absolute; bottom: 20px; right: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #A52A2A; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
-                            <div style="font-weight: bold;">التجهيزات</div>
+                            <div style="font-weight: bold;">التجهيزات Equipment</div>
                             <div style="font-size: 12px; font-weight: bold;">${document.querySelector('#equipment-box .axis-score').textContent}</div>
-                            <div>من ${document.querySelector('#equipment-box .axis-total').textContent.replace('من ', '')}</div>
+                            <div>من from <span style="font-weight: bold;">${document.querySelector('#equipment-box .axis-number').textContent}</span></div>
                         </div>
                         <div style="position: absolute; bottom: 20px; left: 20px; width: 70px; height: 50px; background: white; border-radius: 5px; border: 2px solid #DC143C; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 10px; padding: 5px;">
-                            <div style="font-weight: bold;">الإدارة</div>
+                            <div style="font-weight: bold;">الإدارة Management</div>
                             <div style="font-size: 12px; font-weight: bold;">${document.querySelector('#management-box .axis-score').textContent}</div>
-                            <div>من ${document.querySelector('#management-box .axis-total').textContent.replace('من ', '')}</div>
+                            <div>من from <span style="font-weight: bold;">${document.querySelector('#management-box .axis-number').textContent}</span></div>
                         </div>
                     </div>
                 `;
                 
-                // إعداد جدول النتائج في PDF
+                // إعداد جدول النتائج في PDF Prepare results table in PDF
                 const pdfResultsBody = document.getElementById('pdf-results-body');
                 pdfResultsBody.innerHTML = '';
                 
-                const categories = ['خدمة العملاء', 'النظافة', 'المعدات والتجهيزات', 'إدارة المطعم', 'الجودة'];
+                const categories = ['خدمة العملاء Customer Service', 'النظافة Cleanliness', 'المعدات والتجهيزات Equipment and Facilities', 'إدارة المطعم Restaurant Management', 'الجودة Quality'];
                 
-                // حساب الدرجات المحققة لكل محور
+                // حساب الدرجات المحققة لكل محور Calculate achieved scores for each axis
                 let totalAchievedForPDF = 0;
                 let totalMaxForPDF = 0;
                 
@@ -1766,29 +1778,29 @@
                     pdfResultsBody.appendChild(row);
                 });
                 
-                // إضافة صف الإجمالي
+                // إضافة صف الإجمالي Add Total Row
                 const totalRow = document.createElement('tr');
                 totalRow.innerHTML = `
-                    <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">الإجمالي</td>
+                    <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">الإجمالي Total</td>
                     <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">${totalMaxForPDF}</td>
                     <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold;">${totalAchievedForPDF}</td>
                     <td style="padding: 6px; border: 1px solid #000; text-align: center; font-weight: bold; background-color: ${getPercentageColor(totalPercentage)}; color: black;">${totalPercentage}%</td>
                 `;
                 pdfResultsBody.appendChild(totalRow);
                 
-                // إضافة التقييم النهائي مع الدائرة الملونة
+                // إضافة التقييم النهائي مع الدائرة الملونة Add final evaluation with colored circle
                 const finalCircleColor = getPercentageColorForCircle(totalPercentage);
                 document.getElementById('pdf-final-evaluation').innerHTML = `
                     <div>${evaluationText}</div>
                 `;
                 
-                // تحديث الدائرة الملونة في PDF
+                // تحديث الدائرة الملونة في PDF Update colored circle in PDF
                 const pdfFinalCircle = document.getElementById('pdf-final-circle');
                 pdfFinalCircle.style.backgroundColor = finalCircleColor;
                 pdfFinalCircle.textContent = totalPercentage + '%';
                 pdfFinalCircle.style.color = 'white';
                 
-                // إعداد العنصر للتصوير
+                // إعداد العنصر للتصوير Prepare element for capture
                 const element = document.getElementById('pdf-template');
                 const originalStyles = {
                     display: element.style.display,
@@ -1810,7 +1822,7 @@
                 element.style.background = 'white';
                 element.style.padding = '20px';
                 
-                // استخدام html2canvas لالتقاط الصورة
+                // استخدام html2canvas لالتقاط الصورة Use html2canvas to capture image
                 const canvas = await html2canvas(element, {
                     scale: 2,
                     useCORS: true,
@@ -1822,7 +1834,7 @@
                     windowHeight: 1123
                 });
                 
-                // إعادة العنصر إلى وضعه الأصلي
+                // إعادة العنصر إلى وضعه الأصلي Restore element to original position
                 element.style.display = originalStyles.display;
                 element.style.position = originalStyles.position;
                 element.style.left = originalStyles.left;
@@ -1837,29 +1849,29 @@
                 const imgWidth = pdf.internal.pageSize.getWidth();
                 const imgHeight = (canvas.height * imgWidth) / canvas.width;
                 
-                // إضافة الصورة إلى PDF
+                // إضافة الصورة إلى PDF Add image to PDF
                 pdf.addImage(imgData, 'JPEG', 0, 0, imgWidth, imgHeight);
                 
-                // حفظ ملف PDF
-                const restaurantName = selectedRestaurant ? selectedRestaurant.replace(/\s+/g, '_') : 'تقييم';
+                // حفظ ملف PDF Save PDF file
+                const restaurantName = selectedRestaurant ? selectedRestaurant.replace(/\s+/g, '_') : 'تقييم Evaluation';
                 const fileName = `تقييم_${restaurantName}_${formattedDate}.pdf`;
                 pdf.save(fileName);
                 
             } catch (error) {
                 console.error('Error generating PDF:', error);
-                alert('حدث خطأ أثناء إنشاء ملف PDF: ' + error.message);
+                alert('حدث خطأ أثناء إنشاء ملف PDF: Error occurred while generating PDF: ' + error.message);
             }
         }
 
-        // طباعة التقرير
+        // طباعة التقرير Print Report
         function printEvaluation() {
             calculateResults();
             window.print();
         }
 
-        // إعادة تعيين النموذج
+        // إعادة تعيين النموذج Reset Form
         function resetForm() {
-            if (confirm('هل أنت متأكد من إعادة تعيين جميع البيانات؟')) {
+            if (confirm('هل أنت متأكد من إعادة تعيين جميع البيانات؟ Are you sure you want to reset all data?')) {
                 document.querySelectorAll('.score-btn').forEach(btn => {
                     btn.textContent = '0';
                     btn.classList.remove('active');
@@ -1883,11 +1895,31 @@
                 document.getElementById('area-manager').textContent = '-';
                 document.getElementById('operation-manager').textContent = '-';
                 
+                // إعادة تعيين مربعات المحاور Reset axis boxes
+                document.querySelectorAll('.axis-box').forEach(box => {
+                    const scoreElement = box.querySelector('.axis-score');
+                    const totalElement = box.querySelector('.axis-total');
+                    const axisNumber = box.querySelector('.axis-number');
+                    
+                    if (scoreElement) scoreElement.textContent = '0';
+                    if (totalElement && axisNumber) {
+                        // استعادة القيم الافتراضية Restore default values
+                        const defaultValues = {
+                            'service-box': '200',
+                            'cleanliness-box': '300',
+                            'equipment-box': '250',
+                            'management-box': '250'
+                        };
+                        const boxId = box.id;
+                        axisNumber.textContent = defaultValues[boxId] || '0';
+                    }
+                });
+                
                 calculateResults();
             }
         }
 
-        // تهيئة النموذج عند تحميل الصفحة
+        // تهيئة النموذج عند تحميل الصفحة Initialize form when page loads
         document.addEventListener('DOMContentLoaded', initializeForm);
     </script>
 </body>
